@@ -152,6 +152,7 @@ def main():
             img_L += np.random.normal(0, args.noise_level_img/255., img_L.shape)
 
         util.imshow(util.single2uint(img_L), title='Noisy image with noise level {}'.format(args.noise_level_img)) if args.show_img else None
+        util.imsave(util.single2uint(img_L), os.path.join(E_path, img_name+'L'+ext))
 
         img_L = util.single2tensor4(img_L)
         img_L = img_L.to(device)
